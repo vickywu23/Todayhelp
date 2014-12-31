@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="view_pager_indicator_bg">#f0eeee</color>
+    <color name="listview_bg">#f0eeee</color>
+    <color name="common_title_bg">#F1F1F1</color>
+    
+    <color name="text_color_white">#ffffff</color>
+</resources>
