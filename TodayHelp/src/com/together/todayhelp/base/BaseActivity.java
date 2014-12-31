@@ -17,54 +17,53 @@ import com.together.todayhelp.R;
 
 public class BaseActivity extends Activity {
 
-	private List<Activity> activityList = new ArrayList<Activity>();
-	protected ImageView backImageView = null;
-	protected LinearLayout backImage = null;
-	protected ImageView accountImage = null;
-	protected Button selectBtn = null;
-	protected TextView titleText = null;
-	protected View dialogView;
-	protected Dialog selectionDialog;
+    private List<Activity> activityList = new ArrayList<Activity>();
+    protected ImageView backImageView = null;
+    protected LinearLayout backImage = null;
+    protected ImageView accountImage = null;
+    protected Button selectBtn = null;
+    protected TextView titleText = null;
+    protected View dialogView;
+    protected Dialog selectionDialog;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		addActivity(this);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addActivity(this);
+    }
 
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-		finish();
-		overridePendingTransition(R.anim.activity_back_in,
-				R.anim.activity_back_out);
-	}
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        overridePendingTransition(R.anim.activity_back_in,
+                R.anim.activity_back_out);
+    }
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		removeActivity(this);
-	}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        removeActivity(this);
+    }
 
-	protected void init(int resId) {
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-		setContentView(resId);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
-				R.layout.common_title);
+    protected void init(int resId) {
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+        setContentView(resId);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
+                R.layout.common_title);
 
-//		backImageView = (ImageView) findViewById(R.id.img_title_back);
-//		backImage = (LinearLayout) findViewById(R.id.ll_title_back);
-//		accountImage = (ImageView) findViewById(R.id.img_title_account);
-//		selectBtn = (Button) findViewById(R.id.btn_title_select);
-//		titleText = (TextView) findViewById(R.id.tv_title_text);
-	}
+//        backImageView = (ImageView) findViewById(R.id.img_title_back);
+//        backImage = (LinearLayout) findViewById(R.id.ll_title_back);
+//        accountImage = (ImageView) findViewById(R.id.img_title_account);
+//        selectBtn = (Button) findViewById(R.id.btn_title_select);
+//        titleText = (TextView) findViewById(R.id.tv_title_text);
+    }
 
-
-	private void addActivity(Activity activity) {
+    private void addActivity(Activity activity) {
         activityList.add(activity);
     }
-	
-	public void removeActivity(Activity activity) {
+
+    public void removeActivity(Activity activity) {
 
         for (Activity activityExist : activityList) {
             if (activity == activityExist) {

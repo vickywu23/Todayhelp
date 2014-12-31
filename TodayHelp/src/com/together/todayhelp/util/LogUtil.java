@@ -4,7 +4,6 @@ import com.together.todayhelp.Constants;
 
 import android.util.Log;
 
-
 public final class LogUtil {
 
     private LogUtil () {

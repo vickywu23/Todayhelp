@@ -29,7 +29,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.widget.Toast;
 
-
 public class CrashHandler implements UncaughtExceptionHandler {
 
     public static final String TAG = CrashHandler.class.getName();
